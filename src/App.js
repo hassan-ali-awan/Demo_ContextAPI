@@ -2,15 +2,19 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import Parent from './Parent';
 import './App.css';
+import ValueContext from './ValueContext';
 
 function App() {
   let [number, setNumber]=useState(45);
+  let value=81;
   return (
-    <div >
+    <ValueContext.Provider value={value}>
+      <div >
           Hello World
-          <Parent num={number}></Parent> <br/>
-          <button onClick={()=>{setNumber(++number)}}> Update number</button>
-    </div>
+          <Parent ></Parent> <br/>
+          
+      </div>
+    </ValueContext.Provider> 
   );
 }
 
