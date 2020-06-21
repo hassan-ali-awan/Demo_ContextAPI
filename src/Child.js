@@ -6,7 +6,8 @@ function Child() {
   let value=useContext(ValueContext);
   return (
     <div >
-          Child Number {value}
+          Child Number {value[0]}<br/>
+          <button onClick={()=>{value[1](++value[0])}}>Update value</button>
     </div>
   );
 }
